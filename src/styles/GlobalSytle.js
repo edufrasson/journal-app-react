@@ -16,5 +16,10 @@ export default createGlobalStyle`
     #root{
         height: 100vh;
     }
+
+    .App{
+        height: 100%;
+        width: 100%;
+    }
 `;
 

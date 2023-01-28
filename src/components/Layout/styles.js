@@ -1,3 +1,6 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
-const BodyContainer = styled.div``;
+export const BodyContainer = styled.div`
+    width: 100%;
+    height: 100%;
+`;

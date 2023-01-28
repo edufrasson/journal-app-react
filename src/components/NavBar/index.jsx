@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
-import {NavBarContainer} from "./styles.js"
+import {NavBarContainer, ImageContainer, LinkContainer, TextContainer, LogoIcon} from "./styles.js";
+
+
 
 export function NavBar() {
     return (
         <NavBarContainer>
             <ImageContainer>
-                <img src="#" alt="logo" />
+                <LogoIcon/>
+                <h3>Journal App</h3>
             </ImageContainer>
-            <LinksContainer>
+            <LinkContainer>
                 <TextContainer>
                     <ul>
                         <li>
@@ -15,7 +18,7 @@ export function NavBar() {
                         </li>
                     </ul>
                 </TextContainer>
-            </LinksContainer>
+            </LinkContainer>
         </NavBarContainer>
     )
 }
