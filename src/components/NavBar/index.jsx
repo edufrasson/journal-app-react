@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import {NavBarContainer, ImageContainer, LinkContainer, TextContainer, LogoIcon} from "./styles.js";
+
+import {NavBarContainer, ImageContainer, LinkContainer, TextContainer, LogoIcon, LinkStyle} from "./styles.js";
 
 
 
@@ -14,7 +14,8 @@ export function NavBar() {
                 <TextContainer>
                     <ul>
                         <li>
-                            <Link to="/">Home</Link>
+                            <LinkStyle to="/">Home</LinkStyle>
+                            <LinkStyle to="/add">Add </LinkStyle>                           
                         </li>
                     </ul>
                 </TextContainer>
