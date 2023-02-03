@@ -1,11 +1,13 @@
-import {Layout} from "./components/Layout"
+import { Layout } from "./components/Layout"
+
 import GlobalSytle from "./styles/GlobalSytle";
 
 function App() {
   return (
-    <div className="App">
-      <Layout/>
-      <GlobalSytle/>
+    <div className="App">         
+        <Layout />
+              
+      <GlobalSytle />
     </div>
   );
 }

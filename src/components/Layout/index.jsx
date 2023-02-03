@@ -1,3 +1,4 @@
+import {React} from 'react';
 import { NavBar } from "../NavBar"
 import { Content } from "../Content"
 import { Footer } from "../Footer"

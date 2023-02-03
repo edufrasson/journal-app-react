@@ -1,4 +1,4 @@
-
+import {React} from 'react';
 import {NavBarContainer, ImageContainer, LinkContainer, TextContainer, LogoIcon, LinkStyle} from "./styles.js";
 
 
@@ -14,8 +14,8 @@ export function NavBar() {
                 <TextContainer>
                     <ul>
                         <li>
-                            <LinkStyle to="/">Home</LinkStyle>
-                            <LinkStyle to="/add">Add </LinkStyle>                           
+                            <LinkStyle to="/"><strong>Home</strong></LinkStyle>
+                            <LinkStyle to="/add"><strong>Add</strong> </LinkStyle>                           
                         </li>
                     </ul>
                 </TextContainer>

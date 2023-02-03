@@ -1,3 +1,4 @@
+import {React} from 'react';
 import {FooterContainer, FooterText} from './style';
 
 export function Footer(){

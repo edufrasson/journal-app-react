@@ -50,5 +50,5 @@ export const TextContainer = styled.div`
 
 export const LinkStyle = styled(Link)`
     text-decoration: none;
-    color: black;
+    color: #1e1e1e;
 `;
