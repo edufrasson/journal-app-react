@@ -2,7 +2,7 @@ import React from 'react';
 import {CardHeader, CardBody, CardFooter, Cards, PencilIcon, TrashIcon } from './styles';
 
 
-export function CardStyle(id, title, content) {
+export function CardStyle({id, title, content}) {
     return (
         <Cards key={id}>
             <CardHeader>
