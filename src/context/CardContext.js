@@ -1,9 +1,12 @@
 import React, {createContext, useState} from "react";
+import { useAxios } from "../hooks/useAxios";
 import { API } from "../services/api";
 
 export const CardContext = createContext();
 
 export function CardContextProvider({children}){
+    const {data, mutate} = useAxios('noticia');
+
     const [title, setTitle] = useState([])
     const [id, setId] = useState(null)
     const [content, setContent] = useState([])
@@ -43,6 +46,18 @@ export function CardContextProvider({children}){
     }
     function handleDelete(id){
         API.delete(`noticia/delete?id=${id}`)
+
+        /*
+            Adiciona apenas os cards que não tem o mesmo id do que o informado pra ser deletado no objeto,
+            fazendo com que ele não apareça mais na tela até ser revalidado.
+
+            Depois, esse objeto é mutado com o SWR, atulizando a variável data.
+        */
+        const updatedCards = {
+            response_data: data.response_data?.filter((card) => card.id !== id)
+        }
+
+        mutate(updatedCards, false);
     }
 
     return <CardContext.Provider
