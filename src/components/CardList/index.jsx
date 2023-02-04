@@ -20,7 +20,8 @@ export function CardList() {
                     key={card.id}
                     id={card.id}
                     title={card.titulo}
-                    content={card.conteudo}                
+                    content={card.conteudo} 
+                    category_id={card.id_categoria}               
                 />
             ))}          
         </CardContainer>

@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useContext, useEffect} from 'react';
+import { Link } from 'react-router-dom';
+import {CardContext} from '../../context/CardContext'
 import {CardHeader, CardBody, CardFooter, Cards, PencilIcon, TrashIcon } from './styles';
 
 
-export function CardStyle({id, title, content}) {
+export function CardStyle({id, title, content, category_id}) {
+    const {handleEdit, handleDelete, getCategory, category} = useContext(CardContext);
+    useEffect(() =>{
+    
+        getCategory(category_id);
+    }, [])
     return (
         <Cards key={id}>
             <CardHeader>
@@ -14,8 +21,10 @@ export function CardStyle({id, title, content}) {
             </CardBody>
             <hr />
             <CardFooter>
-                <PencilIcon />
-                <TrashIcon />
+                <Link to={'/add'}>
+                    <PencilIcon onClick={() => handleEdit(id, title, content, category)}/>
+                </Link>                
+                <TrashIcon onClick={() => handleDelete(id)}/>
             </CardFooter>
         </Cards>       
     )

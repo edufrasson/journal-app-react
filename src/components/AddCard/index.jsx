@@ -6,12 +6,14 @@ export function AddCard() {
     const {
     handleSubmit,
     title, titleHandler,
+    id, idHandler,
     content, contentHandler,
     category, categoryHandler    
     } = useContext(CardContext);
 
     return (
         <FormContainer onSubmit={handleSubmit}>
+            <InputStyle type={'hidden'} value={id} onChange={idHandler}/>
             <InputsContainer>
                 <LabelStyle>
                     Title
