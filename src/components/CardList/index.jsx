@@ -15,9 +15,7 @@ export function CardList() {
         })
     }, [])*/
 
-    const { data } = useAxios('noticia');
-
-    console.log(data)
+    const { data } = useAxios('noticia');   
 
     return (
         <CardContainer>
