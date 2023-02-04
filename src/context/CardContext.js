@@ -41,8 +41,8 @@ export function CardContextProvider({children}){
         setContent(content)
         setId(id)
     }
-    function handleDelete(){
-
+    function handleDelete(id){
+        API.delete(`noticia/delete?id=${id}`)
     }
 
     return <CardContext.Provider
