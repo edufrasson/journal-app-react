@@ -12,6 +12,13 @@ export function CardContextProvider({children}){
     const [content, setContent] = useState([])
     const [category, setCategory] = useState([])
 
+    function resetStates(){
+        setTitle([])
+        setId([])
+        setContent([])
+        setCategory([])
+    }
+
     function titleHandler(event){
         setTitle(event.target.value)
     }
@@ -25,28 +32,54 @@ export function CardContextProvider({children}){
         setCategory(event.target.value)
     }
 
-    function handleSubmit(){     
+    function handleSubmit(event){  
+        event.preventDefault();   
         const card = {
             id, title, content, category
         }
 
-        API.post('noticia/save', card)
+        if(id){
+            API.put('noticia/save', card)
+
+            const updatedCards = {
+                response_data: data?.response_data?.map((video =>{
+                    /* 
+                        Percorre toda a lista de noticia, quando achar a noticia editada,
+                        ele retorna os novos valores pro registro.
+                    */
+                    if(video.id === id){
+                        return [title, content, category]
+                    }
+                    
+                    return video;
+                }))
+            }
+
+            mutate(updatedCards, false);
+        }else{
+            API.post('noticia/save', card)
+
+            const updatedCards = {
+                response
+            }
+            
+        }        
     }
 
-    function getCategory(category_id){    
+    function getAndSetCategory(category_id){    
         API.get(`categoria/get-by-id?id=${category_id}`).then((response) => {
             setCategory(response.data.response_data.nome)
         })
     }
 
-    function handleEdit(id, title, content){
+    function handleEdit(id, title, content, category_id){
         setTitle(title)
         setContent(content)
         setId(id)
+        getAndSetCategory(category_id);
     }
     function handleDelete(id){
         API.delete(`noticia/delete?id=${id}`)
-
         /*
             Adiciona apenas os cards que não tem o mesmo id do que o informado pra ser deletado no objeto,
             fazendo com que ele não apareça mais na tela até ser revalidado.
@@ -64,7 +97,7 @@ export function CardContextProvider({children}){
             value={{
                 title, content, category, id,
                 titleHandler, contentHandler, categoryHandler, idHandler,
-                handleSubmit, handleEdit, handleDelete, getCategory
+                handleSubmit, handleEdit, handleDelete, getAndSetCategory
             }}
         >
             {children}

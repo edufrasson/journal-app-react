@@ -5,11 +5,8 @@ import {CardHeader, CardBody, CardFooter, Cards, PencilIcon, TrashIcon } from '.
 
 
 export function CardStyle({id, title, content, category_id}) {
-    const {handleEdit, handleDelete, getCategory, category} = useContext(CardContext);
-    useEffect(() =>{
-    
-        getCategory(category_id);
-    }, [])
+    const {handleEdit, handleDelete} = useContext(CardContext);
+   
     return (
         <Cards key={id}>
             <CardHeader>
@@ -22,7 +19,7 @@ export function CardStyle({id, title, content, category_id}) {
             <hr />
             <CardFooter>
                 <Link to={'/add'}>
-                    <PencilIcon onClick={() => handleEdit(id, title, content, category)}/>
+                    <PencilIcon onClick={() => handleEdit(id, title, content, category_id)}/>
                 </Link>                
                 <TrashIcon onClick={() => handleDelete(id)}/>
             </CardFooter>
