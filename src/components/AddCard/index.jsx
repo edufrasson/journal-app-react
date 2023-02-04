@@ -1,28 +1,34 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
+import { CardContext } from '../../context/CardContext';
 import { FormContainer, InputsContainer, LabelStyle, InputStyle, TextAreaStyle, InputsAreaContainer, ButtonStyle } from './styles';
 
 export function AddCard() {
- 
+    const {
+    handleSubmit,
+    title, titleHandler,
+    content, contentHandler,
+    category, categoryHandler    
+    } = useContext(CardContext);
 
     return (
-        <FormContainer >
+        <FormContainer onSubmit={handleSubmit}>
             <InputsContainer>
                 <LabelStyle>
                     Title
                 </LabelStyle>
-                <InputStyle id='txtTitle' />
+                <InputStyle value={title} onChange={titleHandler} />
             </InputsContainer>
             <InputsContainer>
                 <LabelStyle>
                     Category
                 </LabelStyle>
-                <InputStyle id='txtCategory'/>
+                <InputStyle value={category} onChange={categoryHandler} />
             </InputsContainer>
             <InputsAreaContainer>
                 <LabelStyle>
                     Content
                 </LabelStyle>
-                <TextAreaStyle id='txtContent'/>
+                <TextAreaStyle value={content} onChange={contentHandler} />
             </InputsAreaContainer>
             <InputsContainer>
                 <ButtonStyle type='submit'>Add</ButtonStyle>
