@@ -1,4 +1,4 @@
-import React, { useContext, useEffect} from 'react';
+import React, { useContext} from 'react';
 import { Link } from 'react-router-dom';
 import {CardContext} from '../../context/CardContext'
 import {CardHeader, CardBody, CardFooter, Cards, PencilIcon, TrashIcon } from './styles';

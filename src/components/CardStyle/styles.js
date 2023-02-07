@@ -6,8 +6,10 @@ export const Cards = styled.div`
     width: 250px;    
     padding: 10px;
 
+    background-color: white;
+
     border-radius: 10px;
-    border: 1px solid black;
+    border: 1px solid #33373d;
     box-shadow: 18px 21px 48px -24px rgba(0,0,0,0.37);
 `;
 export const CardHeader = styled.div`

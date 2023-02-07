@@ -5,7 +5,7 @@ export function Footer(){
     return(
         <FooterContainer>
             <FooterText>
-                developed by Eduardo with ❤
+                developed with ❤ by @edu.frasson
             </FooterText>
         </FooterContainer>
     )

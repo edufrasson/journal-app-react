@@ -59,8 +59,10 @@ export function CardContextProvider({ children }) {
             }
 
             mutate(updatedCards, false);
+            resetStates();
             history('')
         } else {
+            console.log('caiu no if certo')
             API.post('noticia/save', card)
             /* 
                 Retorna todos os valores da lista de noticias e adiciona o objeto 'card',
@@ -70,9 +72,11 @@ export function CardContextProvider({ children }) {
                 response_data: [...data?.response_data, card]
             }
             mutate(updatedCards, false);
+            resetStates();
             history('')
         }
     }
+
 
     function getAndSetCategory(category_id) {
         API.get(`categoria/get-by-id?id=${category_id}`).then((response) => {
@@ -106,7 +110,8 @@ export function CardContextProvider({ children }) {
         value={{
             title, content, category, id,
             titleHandler, contentHandler, categoryHandler, idHandler,
-            handleSubmit, handleEdit, handleDelete, getAndSetCategory
+            handleSubmit, handleEdit, handleDelete, getAndSetCategory, resetStates
+            
         }}
     >
         {children}

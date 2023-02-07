@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { CardStyle } from '../CardStyle';
-import { API } from '../../services/api';
 import { useAxios } from '../../hooks/useAxios';
 
 import { CardContainer } from './styles';

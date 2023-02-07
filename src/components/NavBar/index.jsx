@@ -1,16 +1,19 @@
-import {React} from 'react';
-import {NavBarContainer, ImageContainer, LinkContainer, TextContainer, LogoIcon, LinkStyle} from "./styles.js";
+import React from 'react';
+
+import {NavBarContainer, ImageContainer, ActionContainer, TextContainer, LogoIcon, LinkStyle} from "./styles.js";
 
 
 
 export function NavBar() {
+    
+
     return (
         <NavBarContainer>
             <ImageContainer>
                 <LogoIcon/>
                 <h3>Journal App</h3>
             </ImageContainer>
-            <LinkContainer>
+            <ActionContainer>              
                 <TextContainer>
                     <ul>
                         <li>
@@ -19,7 +22,7 @@ export function NavBar() {
                         </li>
                     </ul>
                 </TextContainer>
-            </LinkContainer>
+            </ActionContainer>
         </NavBarContainer>
     )
 }

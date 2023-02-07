@@ -1,15 +1,23 @@
 import styled from "styled-components";
 
 export const FormContainer = styled.form`
-    width: 35%;
-    height: 70vh;
+    width: 40%;
+    height:68vh;
     padding: 20px;
+    margin-bottom: -43px;
     border-radius: 8px;
     border: 1px solid black;
-    box-shadow: 10px 10px 159px -80px rgba(0,0,0,0.45);
+    box-shadow: 9px 9px 63px -14px rgba(0,0,0,0.45);
 
     display: flex;
     flex-direction: column;
+
+    @media(max-width: 1000px){
+        width: 50%;
+    }
+    @media(max-width: 700px){
+        width: 65%;
+    }
 `;
 export const InputsContainer = styled.div`
     width:100%;
@@ -17,7 +25,7 @@ export const InputsContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 `;
 
 export const InputsAreaContainer = styled.div`
@@ -49,6 +57,7 @@ export const ButtonStyle = styled.button`
    font-size: 16px;
    padding: 5px;
    border-radius: 5px;
+
    &:hover{
     transition: 0.7ms;
     opacity: 0.88;

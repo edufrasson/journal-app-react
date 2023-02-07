@@ -12,7 +12,7 @@ export default createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
 
-        color: #1e1e1e;
+        color: #33373d;
     }
 
     #root{
